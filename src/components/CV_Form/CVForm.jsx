@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Personal from './Personal'
 import EducationForm from './EducationForm'
 import ExperienceForm from './ExperienceForm'
 
@@ -42,20 +43,7 @@ export default function CVForm({
                 <li>Education</li>
                 <li>Experience</li>
             </ul>
-            <h2>Personal Details</h2>
-            <input 
-            type="text" 
-            placeholder="first name.." 
-            value={cvData.firstName} 
-            name="firstName"
-            onChange={handlePersonalChange} />
-            
-            <input 
-            type="text" 
-            placeholder="last name.." 
-            value={cvData.lastName} 
-            name="lastName"
-            onChange={handlePersonalChange} />
+            <Personal cvData={cvData} handlePersonalChange={handlePersonalChange}/>
 
             <h2>Education</h2>
             {educationFormElements}
