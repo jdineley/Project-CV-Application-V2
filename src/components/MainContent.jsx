@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid';
+import styled from 'styled-components'
 
 import CVForm from './CV_Form/CVForm'
 import CVPreview from './CV_Preview/CVPreview'
@@ -122,7 +123,7 @@ export default function MainContent() {
     }
 
     return (
-        <>
+        <MainContentWrapper>
             <CVForm
             cvData={cvData}
             handlePersonalChange={handlePersonalChange}
@@ -132,7 +133,17 @@ export default function MainContent() {
             handleAddExperience={handleAddExperience}
             handleDeleteEducation={handleDeleteEducation}
             handleDeleteExperience={handleDeleteExperience} />
-            <CVPreview />
-        </>
+            <CVPreview 
+            cvData={cvData} />
+        </MainContentWrapper>
     )
 }
+
+
+const MainContentWrapper = styled.main`
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    gap: 5px;
+    
+`

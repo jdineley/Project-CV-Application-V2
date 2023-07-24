@@ -4,7 +4,9 @@ const blankCVData = {
     firstName: '',
     lastName: '',
     city: '',
-    contact: '',
+    tel: '',
+    email: '',
+    url: '../../assets/stock_photo.png',
     statement: '',
     education: 
         [
