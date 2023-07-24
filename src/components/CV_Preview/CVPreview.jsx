@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Header from './Header'
+import Main from './Main'
 
 
 
@@ -11,6 +12,7 @@ export default function CVPreview({
         <CVPreviewWrapper>
             {/* <h1>CVPreview</h1> */}
             <Header cvData={cvData}/>
+            <Main cvData={cvData}/>
         </CVPreviewWrapper>
         
     )

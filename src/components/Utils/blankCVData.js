@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 const blankCVData = {
     firstName: '',
     lastName: '',
+    title: '',
     city: '',
     tel: '',
     email: '',
@@ -10,11 +11,6 @@ const blankCVData = {
     statement: '',
     education: 
         [
-            {
-                id: uuid(),
-                degree: '',
-                university: ''
-            },
             {
                 id: uuid(),
                 degree: '',
@@ -28,15 +24,7 @@ const blankCVData = {
             place: '',
             start: '',
             end: ''
-        },
-        {
-            id: uuid(),
-            title: '',
-            place: '',
-            start: '',
-            end: ''
         }
-
     ]
 } 
 

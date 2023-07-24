@@ -49,6 +49,15 @@ export default function Personal({
             value={cvData.email} 
             name="email"
             onChange={handlePersonalChange} />
+
+            <textarea 
+            placeholder='personal statement...' 
+            name="statement" 
+            value={cvData.statement} 
+            id="" cols="30" rows="10"
+            style={{resize: 'none'}} 
+            onChange={handlePersonalChange}
+             />
         </PersonalDetailsWrapper>
     )
 }

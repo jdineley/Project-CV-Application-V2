@@ -6,6 +6,7 @@ import CVForm from './CV_Form/CVForm'
 import CVPreview from './CV_Preview/CVPreview'
 
 import { blankCVData } from "./Utils/blankCVData"
+import { exampleCVData } from './Utils/exampleCVData';
 console.log(blankCVData)
 
 export default function MainContent() {
@@ -122,6 +123,11 @@ export default function MainContent() {
         })
     }
 
+    function handleExampleCv() {
+        console.log('load example cv')
+        setCvData(exampleCVData)
+    }
+
     return (
         <MainContentWrapper>
             <CVForm
@@ -132,7 +138,8 @@ export default function MainContent() {
             handleAddEducation={handleAddEducation}
             handleAddExperience={handleAddExperience}
             handleDeleteEducation={handleDeleteEducation}
-            handleDeleteExperience={handleDeleteExperience} />
+            handleDeleteExperience={handleDeleteExperience}
+            handleExampleCv={handleExampleCv} />
             <CVPreview 
             cvData={cvData} />
         </MainContentWrapper>
