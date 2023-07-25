@@ -23,14 +23,13 @@ export default function Header({
 
 const HeaderWrapper = styled.div`
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 80% 20%;
     padding: 10px;
     background-color: ${({theme}) => theme.colors.dark};
     color: ${({theme}) => theme.colors.light};
-
 `
 const StyledName = styled.div`
-    font-size: 5rem;
+    font-size: 7rem;
 `
 
 const StyledTitle = styled.div`
