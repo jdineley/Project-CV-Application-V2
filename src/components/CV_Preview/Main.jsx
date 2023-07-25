@@ -6,11 +6,11 @@ import styled from 'styled-components'
 export default function Main({ cvData }) {
 
     const EducationElements = cvData.education.map(item => {
-        return <Education item={item} />
+        return <Education key={item.id} item={item} />
     })
 
     const ExperienceElements = cvData.experience.map(item => {
-        return <Experience item={item}/>
+        return <Experience key={item.id} item={item}/>
     })
 
     

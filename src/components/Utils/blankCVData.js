@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid';
+import examplePhoto from '../../assets/stock_photo.png'
 
 const blankCVData = {
     firstName: '',
@@ -7,7 +8,7 @@ const blankCVData = {
     city: '',
     tel: '',
     email: '',
-    url: '../../assets/stock_photo.png',
+    url: examplePhoto,
     statement: '',
     education: 
         [

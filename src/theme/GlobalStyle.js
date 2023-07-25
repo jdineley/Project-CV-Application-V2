@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: black;
   }
 
   img {
@@ -55,7 +56,12 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     font-family: inherit;
     font-size: inherit;
-    padding: 5px;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+
+  input:focus {
+    border: 1px solid ${({ theme }) => theme.colors.dark}
   }
 
   button {

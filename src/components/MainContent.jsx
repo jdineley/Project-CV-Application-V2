@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { v4 as uuid } from 'uuid';
 import styled from 'styled-components'
 
@@ -10,11 +10,21 @@ import { exampleCVData } from './Utils/exampleCVData';
 console.log(blankCVData)
 
 export default function MainContent() {
-    const [ cvData, setCvData ] = useState(blankCVData)
+    const [ cvData, setCvData ] = useState(() => JSON.parse(localStorage.getItem('cvData')) || blankCVData)
     console.log(cvData)
 
+    useEffect(() => {
+        localStorage.setItem('cvData', JSON.stringify(cvData))
+    },[cvData])
+
     function handlePersonalChange(event) {
-        const { name, value } = event.target;
+        const { name, value, type } = event.target;
+
+        if (type === 'file'){
+            handleChangeFile(event);
+            return
+        }
+
         console.log(name)
         setCvData(
             {
@@ -24,11 +34,26 @@ export default function MainContent() {
         )
     }
 
+    function handleChangeFile(event) {
+        const { name } = event.target
+        const file = event.target.files[0]
+        if (!file) return
+
+        const reader = new FileReader()
+        reader.onload = () => {
+          setCvData({  
+              ...cvData,
+              [name]: reader.result,
+            })
+        }
+        reader.readAsDataURL(file)
+    }
+
     function handleEducationChange(event) {
         console.log('change education')
         const {id, name, value} = event.target
         
-        const newEducationArray = [...cvData.education].map(item => {
+        const newEducationArray = cvData.education.map(item => {
             if(id === item.id) {
                 return (
                     {
@@ -49,7 +74,7 @@ export default function MainContent() {
         console.log('change experience')
         const {id, name, value} = event.target
 
-        const newExperienceArray = [...cvData.experience].map(item => {
+        const newExperienceArray = cvData.experience.map(item => {
             if(id === item.id) {
                 return (
                     {
@@ -128,6 +153,10 @@ export default function MainContent() {
         setCvData(exampleCVData)
     }
 
+    function handleResetCv() {
+        setCvData(blankCVData)
+    }
+
     return (
         <MainContentWrapper>
             <CVForm
@@ -139,7 +168,8 @@ export default function MainContent() {
             handleAddExperience={handleAddExperience}
             handleDeleteEducation={handleDeleteEducation}
             handleDeleteExperience={handleDeleteExperience}
-            handleExampleCv={handleExampleCv} />
+            handleExampleCv={handleExampleCv}
+            handleResetCv={handleResetCv} />
             <CVPreview 
             cvData={cvData} />
         </MainContentWrapper>
@@ -152,5 +182,5 @@ const MainContentWrapper = styled.main`
     margin-inline: auto;
     display: flex;
     gap: 5px;
-    
+    margin-bottom: 30px;
 `

@@ -58,6 +58,14 @@ export default function Personal({
             style={{resize: 'none'}} 
             onChange={handlePersonalChange}
              />
+
+            <Label>
+                <FileInputWrapper 
+                type="file"
+                name="url"
+                onChange={handlePersonalChange} />
+                Photo
+            </Label>
         </PersonalDetailsWrapper>
     )
 }
@@ -66,4 +74,18 @@ const PersonalDetailsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 4px;
+`
+
+const FileInputWrapper = styled.input`
+    display: none;
+`
+
+const Label = styled.label`
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #fff;
+    &:active {
+        border: 1px solid ${({ theme }) => theme.colors.dark};
+      }
 `

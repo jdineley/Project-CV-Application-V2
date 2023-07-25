@@ -10,13 +10,13 @@ export default function Header({
             <StyledName>{cvData.firstName} {cvData.lastName}</StyledName>
             <StyledTitle>{cvData.title}</StyledTitle>
             <ContactWrapper>
-                <div><StlyledContactDetail>City: </StlyledContactDetail>{cvData.city}</div>
+                <div><StlyledContactDetail>City:  </StlyledContactDetail>{cvData.city}</div>
                 <div>•</div>
-                <div><StlyledContactDetail>Tel: </StlyledContactDetail>{cvData.tel}</div>
+                <div><StlyledContactDetail>Tel:  </StlyledContactDetail>{cvData.tel}</div>
                 <div>•</div>
-                <div><StlyledContactDetail>Email: </StlyledContactDetail>{cvData.email}</div>
+                <div><StlyledContactDetail>Email:  </StlyledContactDetail>{cvData.email}</div>
             </ContactWrapper>
-            <StyledImage src={stockPhoto} />
+            <StyledImage src={cvData.url} />
         </HeaderWrapper>
     )
 }
@@ -49,5 +49,6 @@ const StyledImage = styled.img`
     grid-row: 1/4;
 `
 const StlyledContactDetail = styled.span`
+    font-size: 1.2rem;
     font-weight: 700;
 `

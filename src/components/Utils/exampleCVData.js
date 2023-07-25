@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid';
+import examplePhoto from '../../assets/Einstein_tongue.jpg'
 
 const exampleCVData = {
     firstName: 'John',
@@ -7,7 +8,7 @@ const exampleCVData = {
     city: 'Liverpool',
     tel: '12345678910',
     email: 'jd@gmail.com',
-    url: '../../assets/stock_photo.png',
+    url: examplePhoto,
     statement: 'Ex unde quidem aut provident natus eos provident accusamus est voluptas dolores sed sequi beatae! Quo earum molestiae in nemo voluptates sed repellendus dolorem ea modi molestiae aut Quis possimus! Sed perferendis reiciendis ut libero labore ut earum voluptatem quo expedita reiciendis qui odio enim nam praesentium placeat ut totam natus. Est quod praesentium et rerum voluptatem eos expedita accusantium eos velit odit sit doloribus unde ut dolores dolores ut voluptatum doloribus Ex unde quidem aut provident natus eos provident accusamus est voluptas dolores sed sequi beatae! Quo earum molestiae in nemo voluptates sed repellendus dolorem ea modi molestiae aut Quis possimus! Sed perferendis reiciendis ut libero labore ut earum voluptatem quo expedita reiciendis qui odio enim nam praesentium placeat ut totam natus. Est quod praesentium et rerum voluptatem eos expedita accusantium eos velit odit sit doloribus unde ut dolores dolores ut voluptatum doloribus.',
     education: 
         [

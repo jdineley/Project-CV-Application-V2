@@ -15,7 +15,8 @@ export default function CVForm({
     handleAddExperience,
     handleDeleteEducation,
     handleDeleteExperience,
-    handleExampleCv
+    handleExampleCv,
+    handleResetCv
     }) 
  {
     const educationFormElements = cvData.education.map((item, index) => {
@@ -51,6 +52,7 @@ export default function CVForm({
             {experienceFormElements}
             <StyledAddButton onClick={handleAddExperience}>Add Experience</StyledAddButton>
             <StyledLoadExampleCVButton onClick={handleExampleCv}>Load Example CV</StyledLoadExampleCVButton>
+            <StyledResetCVButton onClick={handleResetCv}>Reset CV!</StyledResetCVButton>
         </CVFormWrapper>
     )
 }
@@ -71,4 +73,8 @@ const StyledAddButton = styled.button`
 
 const StyledLoadExampleCVButton = styled.button`
     background-color: aqua;
+`
+
+const StyledResetCVButton = styled.button`
+    background-color: red;
 `

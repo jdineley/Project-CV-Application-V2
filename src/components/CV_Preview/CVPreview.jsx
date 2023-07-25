@@ -20,7 +20,8 @@ export default function CVPreview({
 
 
 const CVPreviewWrapper = styled.div`
-    width: 210mm;
+    min-width: 210mm;
+    max-width: 210mm;
     height: 297mm;
     border: 1px solid black;
     border-radius: 5px;
