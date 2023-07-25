@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import stockPhoto from '../../assets/stock_photo.png'
+
 
 export default function Header({
     cvData
