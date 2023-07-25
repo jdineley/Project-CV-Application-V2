@@ -1,4 +1,4 @@
-import Education from "./education"
+import Education from "./Education"
 import Experience from "./Experience"
 
 import styled from 'styled-components'
